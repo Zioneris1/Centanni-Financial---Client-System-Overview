@@ -235,7 +235,7 @@
 
         function resizeCanvas() {
             canvas.width = window.innerWidth;
-            canvas.height = document.body.scrollHeight; // Make canvas full page height
+            canvas.height = window.innerHeight; // Use viewport height for fixed background
             initParticles();
         }
 
@@ -346,7 +346,7 @@
                 }
             });
         }, {
-            threshold: 0.5
+            threshold: 0.1 // Trigger animation sooner
         });
 
         document.querySelectorAll('.fade-in-up').forEach(el => scrollObserver.observe(el));
